@@ -70,7 +70,7 @@ QObject::handle,
 QObject::tab-bar,
 QObject::tab,
 QObject::section {
-  font-family: "Courier New";
+  font-family: "Verdana";
   font-size: 10pt;
   margin: 0;
   padding: 0;
@@ -80,6 +80,15 @@ QObject::section {
   selection-color: #FFF;
   alternate-background: transparent;
   color: #212121; }
+
+/*
+		CHANGES THE MUMBLE TITLE TO MUMBLE
+		AKA HIDE THE UGLY DEV BUILD NUMBER
+*/
+
+QMainWindow#MainWindow {
+  qproperty-windowTitle: "Mumble";
+  qproperty-frame: false; }
 
 QMainWindow,
 QDockWidget {
@@ -103,9 +112,6 @@ a {
 QObject::separator {
   height: 4px;
   width: 4px; }
-
-QObject::separator:hover {
-  background: #e0e0e0; }
 
 DockTitleBar {
   font-size: 7pt; }
@@ -134,39 +140,43 @@ QTextEdit {
 QToolBar {
   border-radius: 0;
   background: #303030;
-  spacing: 0;
-  padding: 8px; }
+  margin: 4px; }
 
 QToolBar::separator {
   background: rgba(255, 255, 255, 24);
-  height: 1px;
+  height: 2px;
   margin: 8px;
-  width: 1px; }
+  width: 2px; }
 
 QToolBar::handle:horizontal {
   image: url(skin:controls/handle_horizontal.svg);
-  padding: 4px; }
+  margin: 8px 0px;
+  padding: 4px 2px; }
 
 QToolBar::handle:vertical {
   image: url(skin:controls/handle_vertical.svg);
-  padding: 4px; }
+  margin: 0px 8px;
+  padding: 2px 4px; }
 
 QToolButton {
-  border: 1px solid transparent;
   border-radius: 2px;
-  padding: 1px;
-  margin: 1px; }
-
-QToolButton:on {
-  background: #FFF;
-  border: 1px solid #CCC; }
+  margin: 2px;
+  padding: 4px; }
 
 QToolButton:hover {
-  background: #e8e8e8;
-  border: 1px solid #ccc; }
+  background: #262626; }
 
 QToolButton:pressed {
-  background: #FAFAFA; }
+  background: #212121; }
+
+QToolButton:on {
+  background: #212121; }
+
+QToolButton:on:hover {
+  background: #161616; }
+
+QToolButton:on:pressed {
+  background: #121212; }
 
 QToolButton#qt_toolbar_ext_button {
   min-width: 8px;
@@ -237,31 +247,30 @@ QGroupBox::title {
 */
 
 QListView {
-  background: #F5F5F5;
+  background: #212121;
   border: 0px solid transparent; }
 
 QListView::item {
   font-style: normal;
   border-radius: 2px;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   color: #FFF;
-  selection-color: #000;
+  selection-color: #FFF;
   padding: 2px 4px; }
 
 QListView::item:hover {
-  background: rgba(0, 0, 0, .0); }
+  background: transparent; }
 
 QListView::item:selected {
-  background: #EEEEEE;
-  border: 0px solid #C4C4C4; }
+  background: transparent; }
 
 QListView::item:selected:active {
-  background: #FAFAFA;
-  border: 0px solid #97b5c6; }
+  background: #212121; }
 
 QListView#qlwIcons {
   padding: 0;
   background: transparent;
+  color: #FFF;
   border: 0;
   font-size: 10pt;
   min-width: 165%;
@@ -273,16 +282,13 @@ QListView#qlwIcons::item {
   padding: 5px 7px; }
 
 QListView#qlwIcons::item:hover {
-  border-color: #e0e0e0;
-  background: #e0e0e0; }
+  background: #262626; }
 
 QListView#qlwIcons::item:selected {
-  background: #FFF;
-  border: 1px solid #CCC; }
+  background: #212121; }
 
 QListView#qlwIcons::item:focus {
-  background: #FAFAFA;
-  border: 0px solid #97b5c6; }
+  background: #212121; }
 
 QListView::item QListWidgetItem,
 QListView::item QLineEdit {
@@ -350,7 +356,6 @@ QTreeView {
   background: #303030;
   alternate-background-color: #303030;
   color: #FFF;
-  selection-background: #212121;
   selection-color: #000;
   min-width: 250px;
   min-height: 500px; }
@@ -359,39 +364,19 @@ QTreeView::item {
   min-width: 60px;
   min-height: 20px;
   color: #FFF;
-  padding: 8px 4px;
+  padding: 4px 4px;
   selection-color: #FFF;
   border-radius: 0; }
 
-QTreeView::item:first,
-QTreeView::item:only-one { }
-
-QTreeView::item:last,
-QTreeView::item:only-one { }
-
 QTreeView::item:hover,
 QTreeView::item:focus {
-  background: #303030; }
+  background: #262626; }
 
 QTreeView::item:selected {
-  background: #212121;
-  border: 0px solid transparent;
-  border-right: 0;
-  border-left: 0; }
-
-QTreeView::item:selected:first,
-QTreeView::item:selected:only-one {
-  border-left: 0px solid #C4C4C4; }
-
-QTreeView::item:selected:last,
-QTreeView::item:selected:only-one {
-  border-right: 0px solid #C4C4C4; }
+  background: #212121; }
 
 QTreeView::item:selected:active {
-  background: #303030;
-  border: 0px solid transparent;
-  border-right: 0;
-  border-left: 0; }
+  background: #212121; }
 
 QTreeView::item:selected:active:first,
 QTreeView::item:selected:active:only-one { }
@@ -401,9 +386,6 @@ QTreeView::item:selected:active:only-one { }
 
 QTreeView::item QLineEdit {
   background: #FFF;
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
   padding-left: 4px;
   padding-right: 4px;
   font-size: 9pt; }
@@ -417,46 +399,19 @@ QTreeView::item QLineEdit:hover {
 */
 
 QTreeView::item:has-children {
-  border-bottom: 2px solid #212121; }
-
-QTreeView::item:has-children:selected {
-  border-bottom: 2px solid #212121; }
-
-QTreeView::item:has-children:hover {
-  border-bottom: 2px solid #212121; }
-
-/*
-		SOME PRETTY DUMB STUFF
-		TO GLUE THE BRANCH THINGS NICELY
-		(BRANCH = THE LITTLE ARROW
-		YOU CLICK TO EXPAND SOMETHING)
-	*/
-QTreeView::branch {
-  margin-bottom: 0px;
-  border-image: none;
-  image: none;
-  border: 0px solid transparent; }
+  border-bottom: 2px solid #424242; }
 
 QTreeView::branch:selected {
-  background: #212121;
-  padding-right: 0px;
-  border-left: 0px; }
+  background: #212121; }
 
 QTreeView::branch:selected:active {
-  background: #212121;
-  padding-right: 0px;
-  border-left: 0px;
-  margin-left: 0px; }
+  background: #212121; }
   
 QTreeView::branch:has-children:closed {
-  image: url(skin:controls/branch_closed.svg);
-  border-bottom: 0px solid #EEEEEE;
-  margin-bottom: 0px; }
+  image: url(skin:controls/branch_closed.svg); }
 
 QTreeView::branch:has-children:open {
-  image: url(skin:controls/branch_open.svg); 
-  border-bottom: 0px solid #EEEEEE;
-  margin-bottom: 0px; }
+  image: url(skin:controls/branch_open.svg); }
 
 /*
 	TREE VIEW CHECK BOX
@@ -497,13 +452,17 @@ QTreeView::indicator:unchecked:disabled {
 QTreeView::indicator:unchecked:disabled:focus {
   image: url(skin:controls/checkbox_unchecked_disabled_focus_dark.svg); }
 
+UserView {}
+
+UserView::item {}
+
 /*
 	HEADER VIEW
 */
 
 QHeaderView {
   background: #303030;
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  border-bottom: 2px solid #424242;
   border-radius: 0; }
 
 QHeaderView::section {
@@ -514,7 +473,7 @@ QHeaderView::section {
 QHeaderView::down-arrow,
 QHeaderView::up-arrow {
   top: 1px;
-  width: 14px; }
+  width: 20px; }
 
 QHeaderView::down-arrow {
   image: url(skin:controls/arrow_down.svg); }
@@ -627,7 +586,10 @@ QScrollBar::handle:horizontal {
   min-height: 20px; }
 
 QScrollBar::handle:hover {
-  background: #C6C6C6; }
+  background: #181818; }
+
+QScrollBar::handle:pressed {
+  background: #121212; }
 
 QScrollBar::left-arrow,
 QScrollBar::right-arrow,
@@ -656,23 +618,13 @@ QAbstractScrollArea::corner {
 
 QLineEdit,
 QSpinBox,
-QAbstractSpinBox {
-  color: #000;
+QAbstractSpinBox,
+QPlainTextEdit,
+QSpinBox {
+  background: #212121;
+  color: #FFF;
   padding: 4px;
   min-height: 1em; }
-
-QSpinBox,
-QAbstractSpinBox {
-  border: 1px solid #C4C4C4;
-  background: #FFF; }
-
-QLineEdit,
-QTextEdit,
-QPlainTextEdit,
-QSpinBox,
-QAbstractSpinBox {
-  border: 1px solid #C4C4C4;
-  background: #303030; }
 
 QSpinBox,
 QAbstractSpinBox {
@@ -692,7 +644,8 @@ QAbstractSpinBox:disabled {
 QAbstractSpinBox::drop-down,
 QSpinBox::drop-down,
 QDateTimeEdit::drop-down {
-  background: #F5F5F5;
+  background: #303030;
+  color: #FFF;
   border: 0;
   margin-left: 4px;
   margin-right: 12px;
@@ -737,36 +690,26 @@ QLabel {
 */
 
 QComboBox {
-  color: #000;
-  padding: 4px;
+  color: #FFF;
+  padding: 6px;
   min-height: 1em;
-  border: 1px solid #C4C4C4;
-  background: #FFF; }
-
-QComboBox:focus {
-  background: rgba(0, 150, 136, 20); }
-
-QComboBox:focus:hover {
-  background: #dcedf5;
-  border-color: #7ea8cc; }
-
-QComboBox:hover {
-  background: #F8F8F8;
-  border-color: #AAA; }
-
-QComboBox:editable {
-  border: 1px solid #C4C4C4;
+  border: 0px solid transparent;
+  border-radius: 2px;
   background: #303030; }
 
-QComboBox:editable:focus {
-  background: #FFF; }
+QComboBox:focus {
+  background: #212121;
+  color: #FFF; }
 
-QComboBox:editable:focus:hover {
-  border-color: #7ea8cc; }
+QComboBox:hover {
+  background: #262626;
+  color: #FFF; }
+
+QComboBox:editable {
+  background: #303030; }
 
 QComboBox:editable:hover {
-  background: #FFF;
-  border-color: #AAA; }
+  background: #262626; }
 
 #qtIconToolbar QComboBox {
   font-size: 8pt; }
@@ -776,16 +719,16 @@ QComboBox:disabled {
   background: #303030; }
 
 QComboBox::drop-down {
-  background: #F5F5F5;
+  background: #303030;
   border: 0;
   margin-left: 4px;
   margin-right: 12px;
   margin-top: 5px; }
 
 QComboBox::down-arrow {
-  margin-top: -2px;
+  margin-top: -6px;
   image: url(skin:controls/arrow_down.svg);
-  width: 14px; }
+  width: 48px; }
 
 QComboBox::down-arrow:disabled {
   image: url(skin:controls/arrow_down_disabled.svg); }
@@ -794,7 +737,7 @@ QComboBox::down-arrow:disabled {
 
 QTreeView::item QComboBox,
 QTreeView::item QLineEdit {
-  background: #FFF;
+  background: #303030;
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
@@ -804,15 +747,13 @@ QTreeView::item QLineEdit {
 
 QTreeView::item QComboBox:hover,
 QTreeView::item QLineEdit:hover {
-  background: #FFF; }
+  background: #262626; }
 
 */
 
 QComboBox QAbstractItemView {
-  background: #F5F5F5;
-  border: 1px solid #EEEEEE;
-  color: #000;
-  border-radius: 0; }
+  background: #303030;
+  color: #FFF; }
 
 /*
 	CHECK BOX
@@ -906,44 +847,39 @@ QRadioButton::indicator:unchecked:disabled:focus {
 	SLIDER
 */
 
-QSlider {
-  margin-left: 0px;
-  margin-right: 0px; }
-
 QSlider::groove {
-  background: #F8F8F8;
+  background: #5C5C5C;
   border: 0px solid transparent;
   border-radius: 3px;
   font-size: 3pt; }
 
 QSlider::groove:horizontal {
+  border: 8px 0px solid transparent;
   height: 0.8em; }
 
 QSlider::groove:vertical {
+  border: 0px 8px solid transparent;
   width: 0.8em; }
 
-QSlider::groove:disabled,
-QSlider::sub-page:disabled {
-  background: #F2F2F2;
-  border: 0px solid transparent; }
-
 QSlider::sub-page {
-  background: #009688;
-  border: 0px solid transparent; }
+  background: #009688; }
+
+QSlider::sub-page:disabled {
+  background: #5C5C5C; }
 
 QSlider::handle {
   background: #009688;
-  border: 0px solid transparent;
-  border-radius: 7px;
-  font-size: 1px; }
+  border: 2px solid #424242;
+  border-radius: 9px;
+  font-size: 3px; }
 
 QSlider::handle:horizontal {
-  margin: -5px -1px;
-  width: 4.5em; }
+  margin: -7px -1px;
+  width: 3.6em; }
 
 QSlider::handle:vertical {
-  margin: -1px -5px;
-  height: 4.5em; }
+  margin: -1px -7px;
+  height: 3.6em; }
 
 QSlider::handle:focus {
   background: #008477; }
@@ -955,31 +891,22 @@ QSlider::handle:pressed {
   background: #00796B; }
   
 QSlider::handle:disabled {
-  background: #F2F2F2;
-  border: 0px solid transparent; }
+  background: #5C5C5C; }
 
 QLineEdit:focus,
 QSpinBox:focus,
 QAbstractSpinBox:focus {
-  background: #FFF; }
-
-QLineEdit:focus:hover,
-QSpinBox:focus:hover,
-QAbstractSpinBox:focus:hover {
-  border-color: #7ea8cc; }
+  background: #121212; }
 
 QLineEdit:hover,
 QSpinBox:hover,
 QAbstractSpinBox:hover {
-  background: #FFF;
-  border-color: #AAA; }
+  background: #161616; }
 
-QLineEdit:focus,
-QTextEdit:focus,
-QPlainTextEdit:focus,
-QSpinBox:focus,
-QAbstractSpinBox:focus {
-  border-color: #7ea8cc; }
+QLineEdit:focus:hover,
+QSpinBox:focus:hover,
+QAbstractSpinBox:focus:hover {
+  background: #121212; }
 
 QFontDialog {
   min-width: 32em;
@@ -992,22 +919,16 @@ QMessageBox,
 QDialogButtonBox {
   dialogbuttonbox-buttons-have-icons: 0; }
 
-/* Mumble Specifics */
+/* 
+	Mumble Specifics
+*/
+
 LogTextBrowser,
 #qdsChat {
   margin: 0 2px;
   min-height: 120px;
   min-width: 40px;
   border-color: #EEEEEE; }
-
-UserView {
-  margin: 0 2px;
-  min-height: 120px;
-  min-width: 40px; }
-
-UserView::item {
-  padding: 0;
-  padding-top: -1px; }
 
 /*
 	!!!!!!! NEEDS SOME WORK !!!!!!!!
@@ -1016,6 +937,7 @@ UserView::item {
 	BE CAREFUL; CHANGING THE MIN-HEIGHT PROBABLY BREAKS EVERYTHING
 	MAKES THE FONT BIGGER; TOO
 */
+
 QTextEdit#qteChat {
   qproperty-placeholderText: "type...";
   qproperty-documentTitle: "type...";
@@ -1033,6 +955,7 @@ QTextEdit#qteChat {
 	THE ABOVE CODE
 	BUT YEAH
 */
+
 LogTextBrowser,
 #qdsChat {
   min-height: 10px;
@@ -1046,6 +969,7 @@ LogTextBrowser,
 /*
 	YEAH..
 */
+
 QTextBrowser {
   padding-left: 5px;
   border: 0px solid transparent;
@@ -1057,6 +981,7 @@ QTextBrowser {
 	(IN THE FUTURE)
 	FOR NOW IT'S JUST DARK GRAY OKAY
 */
+
 .log * {
   border: 0px solid #FFF; }
 
@@ -1126,36 +1051,36 @@ ViewCert {
   min-height: 600px; }
 
 /*
-		---------------------------------------------------
-		Add or import your own custom QSS below
-		---------------------------------------------------
+	---------------------------------------------------
+	Add or import your own custom QSS below
+	---------------------------------------------------
 
-		###################################################
-		!! 		THINK TWICE BEFORE MODIFYING THIS FILE		 !!
-		###################################################
+	###################################################
+	!!    THINK TWICE BEFORE MODIFYING THIS FILE     !!
+	###################################################
 
-		---------------------------------------------------
-		This file is still a mess.
-		At this moment you end up breaking a lot of stuff.
-		Also, migraine.
-		---------------------------------------------------
-
+	---------------------------------------------------
+	This file is still a mess.
+	At this moment you end up breaking a lot of stuff.
+	Also, migraine.
+	---------------------------------------------------
 */
 
 QDockWidget#qdwLog:item {
   padding: 509px; }
 
 /*
-		MAKE THE USER SET COMMENT
-		AND OTHER TOOLTIP-STYLE
-		THINGS WHITE.
-		LOTS OF DUPLICATE CODE FROM
-		THE BASE THEME; PROCEED WITH CAUTION
-	*/
+	MAKE THE USER SET COMMENT
+	AND OTHER TOOLTIP-STYLE
+	THINGS WHITE.
+	LOTS OF DUPLICATE CODE FROM
+	THE BASE THEME; PROCEED WITH CAUTION
+*/
 
 /*
-		THE MENU BAR
-	*/
+	THE MENU BAR
+*/
+
 QMenuBar {
   background: #212121;
   color: #FFF; }
@@ -1208,26 +1133,3 @@ QMenu::indicator {
 
 QMenu::indicator:checked {
   image: url(skin:controls/tick_checked_dark.svg); }
-
-/*
-		CHANGES THE MUMBLE TITLE TO MUMBLE
-		AKA HIDE THE UGLY DEV BUILD NUMBER
-	*/
-QMainWindow#MainWindow {
-  qproperty-windowTitle: "Mumble";
-  qproperty-frame: false; }
-
-/*
-MOST LIKELY DUPLICATE STUFF WHICH WAS LEFT OVER FROM CLODE CLEANUP
-*/
-
-/*
-SOME LEFTOVER CODE I THINK; THE IDEA WAS TO
-REMOVE BLUE FOCUS BORDER FROM CHAT LOG AND INPUT
-BUT THAT IS ALL DONE ABOVE SO
-*/
-
-QLineEdit:focus,
-QSpinBox:focus,
-QAbstractSpinBox:focus {
-  border-color: #7ea8cc; }
