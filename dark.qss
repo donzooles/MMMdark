@@ -45,7 +45,7 @@ ApplicationPalette {
   qproperty-alternatebase: #FDFDFD;
   qproperty-text: #FFF;
   qproperty-text_disabled: #222;
-  qproperty-tooltipbase: #828282;
+  qproperty-tooltipbase: rgba(66, 66, 66, .9);
   qproperty-tooltiptext: #FFF;
   qproperty-tooltiptext_disabled: #222;
   qproperty-brighttext: #FFF;
@@ -128,9 +128,8 @@ QWhatsThis {
 
 QTextBrowser,
 QTextEdit {
-  background: #303030;
-  color: #FFF;
-  border: 1px solid #EEEEEE; }
+  background: #121212;
+  color: #FFF; }
 
 /*
 	THIS IS WHERE ALL THE BUTTONS
@@ -231,7 +230,7 @@ QPushButton::menu-indicator {
 QGroupBox,
 #qwMacWarning {
   background: #424242;
-  border-radius: 4px;
+  border-radius: 2px;
   color: #FFF;
   font-size: 13pt;
   padding: 16px;
@@ -252,7 +251,7 @@ QListView {
 
 QListView::item {
   font-style: normal;
-  border-radius: 2px;
+  border-radius: 0px;
   border: 0px solid transparent;
   color: #FFF;
   selection-color: #FFF;
@@ -271,14 +270,13 @@ QListView#qlwIcons {
   padding: 0;
   background: transparent;
   color: #FFF;
-  border: 0;
   font-size: 10pt;
   min-width: 165%;
-  margin-left: 4px;
-  margin-top: 12px; }
+  margin-top: 9px; }
 
 QListView#qlwIcons::item {
-  margin-bottom: 1px;
+  border-radius: 2px;
+  margin-bottom: 8px;
   padding: 5px 7px; }
 
 QListView#qlwIcons::item:hover {
@@ -697,6 +695,7 @@ QComboBox {
   border-radius: 2px;
   background: #303030; }
 
+QComboBox:pressed,
 QComboBox:focus {
   background: #212121;
   color: #FFF; }
@@ -705,18 +704,11 @@ QComboBox:hover {
   background: #262626;
   color: #FFF; }
 
-QComboBox:editable {
-  background: #303030; }
-
-QComboBox:editable:hover {
-  background: #262626; }
-
 #qtIconToolbar QComboBox {
   font-size: 8pt; }
 
 QComboBox:disabled {
-  border: 1px solid transparent;
-  background: #303030; }
+  background: #353535; }
 
 QComboBox::drop-down {
   background: #303030;
