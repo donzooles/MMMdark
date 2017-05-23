@@ -354,9 +354,7 @@ QTreeView {
   background: #303030;
   alternate-background-color: #303030;
   color: #FFF;
-  selection-color: #000;
-  min-width: 250px;
-  min-height: 500px; }
+  selection-color: #000; }
 
 QTreeView::item {
   min-width: 60px;
