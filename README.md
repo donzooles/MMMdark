@@ -19,7 +19,7 @@ All of these things are very much WIP.
 
 
 ## INSTALLATION
-- Download the newest [version](https://github.com/oplehtinen/MMM/releases)
+- Download the newest [version](https://github.com/donzooles/MMMdark/releases)
 - Unzip files somewhere. Mumble has a themes folder, too.
 - Go to Settings, User Interface, Browse
 - Select M&MM
